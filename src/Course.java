@@ -170,15 +170,14 @@ public class Course
     /**
      * resultat d'un coureur
      * @param coureur Coureur, place place du coureur, gain gain du coureur
-     * @return le coureur si il est trouver et null si rien n'est trouver
      */
-    public Classement resultat(Coureur coureur, int place, float gain){
+    public void resultat(Coureur coureur, int place, float gain){
         for (Classement objet : classementList) {
             if (objet.getCoureur().equals(coureur)) {
-               return objet;
+                objet.setPlace(place);
+                objet.setGain(gain);
             }
         }
-        return null;
     }
     /**
      * modification d'un coureur
